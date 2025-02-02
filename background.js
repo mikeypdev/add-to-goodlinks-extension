@@ -17,7 +17,7 @@ chrome.browserAction.onClicked.addListener((tab) => {
             iconUrl: "icons/goodlinks-icon-48.png",
             title: "GoodLinks Security Popup",
             message:
-              "Firefox will ask for confirmation before launching GoodLinks. Please check the `ALWAYS` checkbox and accept the prompt to continue.",
+              "The browser will ask for confirmation before launching GoodLinks. Please check the `ALWAYS` checkbox and accept the prompt to continue.",
           });
         }
 
