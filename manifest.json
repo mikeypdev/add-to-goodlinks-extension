@@ -1,10 +1,10 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Add to GoodLinks",
   "version": "1.0",
   "description": "Save the current page to GoodLinks using the x-callback-url scheme.",
   "permissions": ["tabs", "storage", "notifications"],
-  "browser_action": {
+  "action": {
     "default_icon": {
       "48": "icons/goodlinks-icon-48.png"
     },
@@ -15,8 +15,7 @@
     "open_in_tab": false
   },
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "icons": {
     "48": "icons/goodlinks-icon-48.png"
