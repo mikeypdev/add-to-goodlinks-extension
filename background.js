@@ -21,14 +21,13 @@ chrome.browserAction.onClicked.addListener((tab) => {
           });
         }
 
+        // Create the tab to trigger the x-callback-url
         chrome.tabs.create(
           { url: goodLinksUrl, active: isFirstRun },
           (newTab) => {
-            if (!isFirstRun) {
-              setTimeout(() => {
-                chrome.tabs.remove(newTab.id);
-              }, 1000);
-            } else {
+            // No longer automatically removing the tab.
+            // The user can manually close the blank tab that opens.
+            if (isFirstRun) {
               chrome.storage.sync.set({ firstRun: true });
             }
           }
